@@ -1,25 +1,32 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
 /**
- * main - Entry point
+ * main - entry point
  *
- * Return: Always 0 (Success)
+ * Description: Write a program that prints the numbers from 00 to 99
+ * Return: 0
  */
 int main(void)
 {
-	int d;
+	int digits[2] = { 0, 0 };
+	int sep[2] = { ',', ' ' };
+	int i = 0;
 
-	for (d = 0; d < 100; d++)
+	for (digits[0] = 0; digits[0] < 10; ++(digits[0]))
 	{
-		putchar((d / 10) + '0');
-		putchar((d % 10) + '0');
-		if (d != 99)
+		for (digits[1] = 0; digits[1] < 10; ++(digits[1]))
 		{
-			putchar(',');
-			putchar(' ');
+			for (i = 0; i < 2; ++i)
+				putchar('0' + digits[i]);
+
+			if (digits[0] != 9 || digits[1] != 9)
+			{
+				for (i = 0; i < 2; ++i)
+					putchar(sep[i]);
+			}
 		}
 	}
+
 	putchar('\n');
 
 	return (0);
