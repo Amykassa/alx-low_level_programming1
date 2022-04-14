@@ -1,24 +1,17 @@
 #include "holberton.h"
 
 /**
- *_isdigit - beginning of program
+ * _isdigit - checks for characters that are digits
+ * @c: character 
  *
- *Description: prints whether a char is a digit or otherwise
- *
- *@c: character to be evaluated
- *
- *Return: 1 if c is a digit, 0 otherwise
+ * Return: 0 or 1
  */
+
+
 int _isdigit(int c)
 {
-	int dig;
-
-	for (dig = 48; dig <= 57; dig++)
-	{
-		if (dig == c)
-		{
-			return (1);
-		}
-	}
-	return (0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }
